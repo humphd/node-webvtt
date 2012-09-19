@@ -7,7 +7,7 @@ e npm module includes the WebVTT parser, and allows one to pass file(s) in order
 
 ## Installation
 
-    $ npm install node-webvtt
+    $ npm install webvtt
 
 installs the `webvtt` shell command.
 
