@@ -7,7 +7,7 @@ var parser = require( "../lib/parser" ),
 program
   .version( "0.0.1" )
   .usage( "[options] <file...>" )
-  .option( "-s, --silent", "Don't print errors messages" )
+  .option( "-s, --silent", "don't print errors messages" )
   .parse( process.argv );
 
 var filenames = program.args,
@@ -15,7 +15,7 @@ var filenames = program.args,
 
 if( filenames.length < 1 ) {
   console.log( "Missing input file(s)." );
-  console.log( "Usage: webvtt.js " + program.usage() );
+  console.log( "Usage: webvtt " + program.usage() );
   process.exit( 1 );
 }
 
@@ -23,19 +23,19 @@ filenames.forEach( function( filename ) {
   try {
     var stats = fs.statSync( filename );
     if( !stats.isFile() ) {
-      console.log( "webvtt: " + filename + ": Not a file." );
+      console.log( "webvtt: %s: Not a file.", filename );
       failed = true;
       return;
     }
   } catch( e ) {
-    console.log( "webvtt: " + filename + ": No such file." );
+    console.log( "webvtt: %s: No such file.", filename );
     failed = true;
     return;
   }
 
   var data = fs.readFileSync( filename, "utf-8" );
   if( !data ) {
-    console.log( "webvtt: " + filename + ": Error - " + err.message );
+    console.log( "webvtt: %s: Error - %s", filename, err.message );
     failed = true;
     return;
   }
@@ -49,8 +49,7 @@ filenames.forEach( function( filename ) {
     error = errors[ i ];
     if( !program.silent ) {
       // sourcefile:lineno.column: message
-      console.log( filename + ":" + error.line + "." + ( error.col || "0" ) +
-                   ": " + error.message );
+      console.log( "%s:%s.%s: %s", filename, error.line, error.col|0, error.message );
     }
   }
 });
