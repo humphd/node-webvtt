@@ -1,5 +1,5 @@
 {
-  "name": "node-webvtt",
+  "name": "webvtt",
   "version": "0.0.1",
   "description": "A command line interface and npm package for the WebVTT JavaScript parser.",
   "main": "parser.js",
@@ -16,7 +16,7 @@
     "shell"
   ],
   "dependencies": {
-    "commander": "1.0.x"
+    "commander": "~1.0.4"
   },
   "author": "David Humphrey <david.humphrey@senecacollege.ca> (@humphd)",
   "license": "BSD",
