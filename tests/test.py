@@ -40,9 +40,7 @@ def main():
 			fail_list.append(file_path)
 
 	# sum up them fails!
-	if fail_count == 0:
-		print "Everything passed! Huzzah!"
-	else:
+	if fail_count > 0:
 		print "It seems that", fail_count, "file" if fail_count == 1 else "files", "have failed to pass, or passed when they should have failed!"
 		print "Here is a list of said files:"
 		for fname in fail_list:
