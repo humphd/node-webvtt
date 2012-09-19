@@ -13,26 +13,29 @@ installs the `webvtt` shell command.
 
 ## Examples
 
-```
-    $ webvtt.js file.vtt
+Validate a single file, printing error messages, if any:
 
-    $ webvtt.js file1.vtt file2.vtt
+    $ webvtt file.vtt
 
-    $ webvtt.js -s file.vtt
-```
+Validate two files, printing error messages, if any:
+
+    $ webvtt file1.vtt file2.vtt
+
+Validate a single file, don't print error messages:
+
+    $ webvtt -s file.vtt
 
 ## Synopsis
 
 ```
-    $ webvtt
+$ webvtt
+Usage: webvtt [options] <file...>
 
-      Usage: webvtt.js [options] <file...>
+Options:
 
-      Options:
-
-        -h, --help     output usage information
-        -V, --version  output the version number
-        -s, --silent   don't print errors messages
+  -h, --help     output usage information
+  -V, --version  output the version number
+  -s, --silent   don't print errors messages
 ```
 
 ## Output
@@ -46,8 +49,8 @@ filename:linenumber.column: message
 For example:
 
 ```
-    $ webvtt file.vtt
-    file.vtt:1.0: No valid signature. (File needs to start with "WEBVTT".)
+$ webvtt file.vtt
+file.vtt:1.0: No valid signature. (File needs to start with "WEBVTT".)
 ```
 
 ## Thanks
