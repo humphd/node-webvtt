@@ -7,6 +7,7 @@ Created by Dale Karp on 2012-09-19.
 import os
 import sys
 import subprocess
+import commands
 
 def main():
 	# variables needed
@@ -14,6 +15,15 @@ def main():
 	bad_test_dir = os.path.realpath("bad")
 	fail_count = 0
 	fail_list = []
+
+	# first, check for webvtt-parser npm package
+	status, results = commands.getstatusoutput("webvtt")
+
+	if status == 32512: # 32512 is 'command not found' in python's OS module exit codes
+		print "webvtt is not installed. Please make sure you have Node.js and NPM installed and then type:"
+		print "npm install webvtt"
+		print "on the command line."
+		sys.exit()
 
 	# get a list of files for good and bad tests
 	good_files = os.listdir(good_test_dir)
