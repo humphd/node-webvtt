@@ -40,6 +40,9 @@ filenames.forEach( function( filename ) {
     return;
   }
 
+  // Strip optional Unicode BOM character
+  data = data.replace( /^\uFEFF/, '' );
+
   var r = ( new parser.WebVTTParser() ).parse( data ),
       errors = r.errors,
       error;
