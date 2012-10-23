@@ -1,0 +1,6 @@
+
+This test checks for the possibility of tab and text after a proper WEBVTT header.
+Spec date:28 September 2012
+http://dev.w3.org/html5/webvtt/#syntax
+*/
+WEBVTT	fdgdfgdgdgfd

@@ -1,0 +1,6 @@
+
+This makes sure that a proper WEBVTT header is read. 
+Spec date:28 September 2012
+http://dev.w3.org/html5/webvtt/#syntax
+*/
+WEBVTT
